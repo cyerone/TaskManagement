@@ -11,8 +11,9 @@ namespace TaskManagement.Controllers
         private readonly IRepository _userRepository;
         public UserController(IRepository userRepository)
         {
-            _userRepository=userRepository;
+            _userRepository = userRepository;
         }
+
         [HttpPost("user")]
         public async Task<IActionResult> CreateUser(UserDTO user)
         {
@@ -25,6 +26,7 @@ namespace TaskManagement.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
         [HttpGet("user/{userId}/tasks")]
         public async Task<IActionResult> GetUserTasks(int userId)
         {

@@ -13,7 +13,7 @@ namespace TaskManagement.Controllers
         {
             _repository = repository;
         }
-        
+
         [HttpPost("comment")]
         public async Task<IActionResult> CreateComment(CommentDTO comment)
         {
@@ -23,10 +23,21 @@ namespace TaskManagement.Controllers
             }
             catch (Exception ex)
             {
-
                 return BadRequest(ex.Message);
             }
-        } 
-       
+        }
+
+        [HttpGet("comments/{taskId}")]
+        public async Task<IActionResult> GetComments(int taskId)
+        {
+            try
+            {
+                return new OkObjectResult(await _repository.GetComments(taskId));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

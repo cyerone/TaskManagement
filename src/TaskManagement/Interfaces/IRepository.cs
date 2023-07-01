@@ -4,15 +4,15 @@ namespace TaskManagement.Interfaces
 {
     public interface IRepository
     {
-        public Task<string> CreateUser(UserDTO json);
-        public Task<string> GetUserTasks(int id);
-        public Task<string> CreateTask(TaskDTO json);
-        public Task<string> EditTask(TaskDTO json, int taskId);
-        public Task<string> DeleteTask(int taskId);
-        public Task<string> CompleteTask(int taskId);
-        public Task<string> GetTasks();
-        public  Task<string> GetTask(int id);
-        public Task<string> CreateComment(CommentDTO json);
-        public Task<string> GetComments(int id);
+        Task<string> CreateUser(UserDTO json);
+        Task<string> GetUserTasks(int id);
+        Task<string> CreateTask(TaskDTO json);
+        Task<string> EditTask(TaskDTO json, int taskId);
+        Task<string> DeleteTask(int taskId);
+        Task<string> CompleteTask(int taskId);
+        Task<string> GetTasks();
+        Task<string> GetTask(int id);
+        Task<string> CreateComment(CommentDTO json);
+        Task<string> GetComments(int id);
     }
 }

@@ -26,7 +26,7 @@ namespace TaskManagement.Controllers
             }
         }
         [HttpGet("task/{id}")]
-        public async Task<IActionResult> GetTasks(int id)
+        public async Task<IActionResult> GetTask(int id)
         {
             try
             {
